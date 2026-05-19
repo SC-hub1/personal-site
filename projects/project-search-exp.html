@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Search Engine Upgrade and UX Optimisation| Shaun Chua</title>
+  <meta name="description" content="Case study: AI explainability for candidate feedback in the rejection email flow at SEEK." />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="../index.html#home">SC</a>
+      <nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container narrow">
+        <p class="back-link"><a href="../index.html#projects">← Back to projects</a></p>
+        <p class="eyebrow">Case Study</p>
+        <h1>Search Engine Upgrade and UX Optimisation</h1>
+        <p class="intro">
+          Improved the search experience for students by upgrading the search engine and optimising the UX.
+        </p>
+        <div class="project-meta card">
+          <div>
+            <span class="meta-label">Role</span>
+            <p>Product Manager</p>
+          </div>
+          <div>
+            <span class="meta-label">Timeline</span>
+            <p>Apr 2025 – Jul 2025</p>
+          </div>
+          <div>
+            <span class="meta-label">Focus</span>
+            <p>Discovery, prioritisation, launch</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow project-body">
+        <h2>Overview</h2>
+        <p>
+            Search is a critical feature in any marketplace because it helps users turn intent into action. At Candlefox, the existing search experience was underperforming and difficult to improve. The engine relied on hard-coded indexing and ranking logic, which meant we had limited control over relevance and optimisation.
+            At the same time, the company was making a broader strategic investment in building an internal AI engine, starting with vector retrieval and eventually evolving toward agent-based experiences. This created an opportunity to solve an immediate product problem while aligning to a longer-term company direction.
+            This case study covers how I framed the search problem, evaluated the strategic options, helped shape an internal retrieval-based solution, and led the testing that ultimately showed the biggest gains came not just from the model, but from pairing the model with the right UX.
+        </p>
+
+        <h2>The problem</h2>
+        <p>
+        Search was already an important part of the marketplace experience, but the underlying system made it hard to improve performance in a meaningful way.        
+        </p>
+        <p>
+        The core issue was that the existing search experience was tightly coupled to hard-coded indexing and ranking. That meant relevance was difficult to tune, iteration was slow, and we had limited ability to respond to user intent in a more intelligent way.
+        </p>
+        <p>This showed up clearly in the data:</p>
+        <ul>
+          <li>only 11% of users were utilising search</li>
+          <li>search had a 40% click-through rate</li>
+          <li>5% of searches returned no results</li>
+          <li>8% of clicks were happening in positions 11 to 20, suggesting the most relevant results were not being surfaced high enough</li>
+        </ul>
+        <p>Taken together, this pointed to two problems:</p>
+        <ul>
+          <li>search was not being used as much as it could be</li>
+          <li>when people did use it, result quality and ranking were not fully optimised</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container narrow project-body">
+        <h2>Discovery</h2>
+        <p>I consideered 2 different paths to address the problem.</p>
+
+        <h3>1. Improve the UI on top of the existing engine</h3>
+        <p>
+            One option was to keep the current model and test UX changes around the existing search experience. This would likely be faster and lower risk in the short term, and could help us understand whether discoverability or interaction design were part of the issue.
+        </p>
+
+        <h3>2. Upgrade the model and search engine</h3>
+        <p>
+            The second option was to focus on the underlying retrieval and ranking capability itself. Strategically, this became more compelling because the company was already investing in an internal AI engine. The work was starting with vector retrieval, with the longer-term ambition to build toward agents.
+        </p>
+        <p>
+            Given that broader direction, it made sense to prioritise the model and engine path. This allowed us to address a real product problem while contributing to a strategic capability the company wanted to build anyway.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow project-body">
+        <h2>Prioritisation</h2>
+
+        <p>
+            Because there was urgency around the internal engine build, I worked closely with the data scientist and engineers to understand how we could test and deliver an internal retrieval-based solution quickly.
+        </p>
+        <p>A big part of the work at this stage was turning a strategic ambition into something testable in product. That meant getting into the detail on:</p>
+        <ul>
+          <li>What the API requirements needed to be</li>
+          <li>How retrievals would be structured and evaluated</li>
+          <li>Decision on which model is best suited. What trade-offs existed between semantic and lexical approaches</li>
+          <li>How we could test value quickly without overbuilding</li>
+        </ul>
+        <p>
+            Early on, we debated whether to focus on semantic enhancements, lexical enhancements, or a combination of both. We started with semantic search because the original hypothesis was that the model was the key constraint in the current experience. If we improved intent matching and semantic relevance, we expected to see stronger clicks and better downstream conversion.
+        </p>
+
+    <section class="section alt">
+      <div class="container narrow project-body">
+        <h2>Launch</h2>
+        <h3>Experiment 1: Semantic search with the existing experience</h3>
+        <p>
+            Our first experiment tested semantic search in the current search experience. The goal was to see whether a better retrieval model on its own would improve user outcomes.
+        </p>
+        <p>The result was not what we expected.</p>
+        <p>While the model may have been more capable in theory, the existing experience was not set up for semantic search to perform well. We saw a decline in metrics, which suggested that the issue was not just model quality. The surrounding UX and interaction design were shaping how the model behaved and how users interpreted the results.</p>
+        <p>This was an important turning point in the project. Rather than treating the weaker result as a failure of the engine, we used it to refine the problem statement.</p>
+
+        <h3>Experiment 2: Updated search UX with the new retrieval approach</h3>
+        <p>
+        Based on the first experiment, we formed a second hypothesis: the UX was not allowing the model to perform at its best. In particular, the way search was being triggered was surfacing recommendations that felt incorrect or mistimed, which reduced trust and performance.
+        </p>
+        <p>We then ran a second experiment that paired the updated retrieval approach with a revised search experience.</p>
+        <p>This hypothesis proved to be correct.</p>
+        <p>By improving the search UX to better support how the model worked, we were able to unlock materially better performance:</p>
+        <ul>
+            <li>click-through rate improved by 4%</li>
+            <li>conversion rate improved by 10%li>
+          </ul>
+        
+        <h2>Results</h2>
+        <p>
+            The project demonstrated that improving search was not just about swapping in a better model. The real gain came from matching the retrieval approach with a UX that allowed it to behave as intended.        </p>
+        <p>Key outcomes included:</p>
+        <ul>
+          <li>validating that the existing hard-coded search architecture was limiting optimisation</li>
+          <li>helping accelerate an internal retrieval build aligned to company strategy</li>
+          <li>proving that semantic retrieval alone was not enough in the current experience</li>
+          <li>identifying UX as a critical enabler of model performance</li>
+          <li>delivering measurable gains in both click-through and conversion once the experience was redesigned appropriately</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow project-body">
+        <h2>Reflection</h2>
+        <p>
+        What I’m most proud of in this project was helping bridge strategy, technical capability, and product execution. The work required moving between high-level prioritisation and low-level delivery detail: understanding where the company wanted to go, working with technical partners to shape a fast path to testing, and then adapting quickly when the first experiment disproved our original hypothesis.
+        </p>
+        <p>
+            Rather than stopping at the initial metric decline, we used the result to better understand the system and uncover the real issue. That shift ultimately led to a stronger solution and a much clearer view of what it takes to make AI-powered search work well in practice.
+        </p>
+        <p class="back-link"><a href="../index.html#projects">← Back to projects</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2026 Shaun Chua</p>
+    </div>
+  </footer>
+</body>
+</html>
