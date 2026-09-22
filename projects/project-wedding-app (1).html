@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Wedding Check-In &amp; Table App | Shaun Chua</title>
+  <meta name="description" content="Case study: building an AI-assisted guest check-in and table lookup app for a 300-guest wedding, without a traditional engineering background." />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="../index.html#home">SC</a>
+      <nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container narrow">
+        <p class="back-link"><a href="../index.html#projects">← Back to projects</a></p>
+        <p class="eyebrow">Case Study</p>
+        <h1>AI Wedding Check-In &amp; Table App</h1>
+        <p class="intro">
+          Built a guest check-in, table lookup, and seating tool for my own 300-guest wedding — designing the data model and check-in flow myself, using AI-coding tools to move fast without a traditional engineering background.
+        </p>
+        <div class="project-meta card">
+          <div>
+            <span class="meta-label">Role</span>
+            <p>Builder &amp; groom</p>
+          </div>
+          <div>
+            <span class="meta-label">Timeline</span>
+            <p>2025, ahead of the wedding day</p>
+          </div>
+          <div>
+            <span class="meta-label">Focus</span>
+            <p>Product design, build, on-the-day ops</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow project-body">
+        <h2>Overview</h2>
+        <p>
+          For my own wedding last year, with around 300 guests, I needed a way to manage guest check-in, table lookups, and seating assignments on the day. A spreadsheet wasn't going to hold up at that scale, especially with everyone arriving and trying to check in at once.
+        </p>
+        <p>
+          This case study covers how I scoped the problem, built the app myself using AI-coding tools, and worked through the judgment calls that AI tools couldn't make for me.
+        </p>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container narrow project-body">
+        <h2>The problem</h2>
+        <p>
+          Weddings compress a lot of coordination into a very short window. Guests arrive in a rush, table assignments need to be found instantly, and whoever is running check-in on the day is often a friend or family member, not someone trained on the system.
+        </p>
+        <p>The core question became:</p>
+        <blockquote>How might I build something simple enough that anyone helping with check-in could use it without training, and fast enough that guests weren't stuck waiting in line?</blockquote>
+        <p>
+          This mattered for two reasons. If check-in was slow, it would create a bottleneck right at the start of the day, when everything else was already on a schedule. And if the tool was confusing, the people running it — not me — would be the ones dealing with the frustration in real time.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow project-body">
+        <h2>Building it</h2>
+        <p>
+          I built the app myself in Replit, without a traditional engineering background. The core pieces were a data structure for guests and table assignments, a lookup and check-in interface, and a Google Sheets backup so we weren't fully dependent on the app if anything broke on the day.
+        </p>
+        <p>
+          The guest-facing flow was simple by design: scan a QR code, load the web app, enter your name, and confirm you've arrived. On the other side, whoever was managing the tables could see a live view of arrival percentages, so they knew how the room was filling up without walking the floor to check.
+        </p>
+        <h3>A design decision that changed mid-build</h3>
+        <p>
+          The first version of the check-in flow was structured per guest. Partway through, I realised many guests were arriving as families rather than individually, and checking each person in one by one didn't match how they'd actually show up. I reworked the interface around family units instead, which made check-in faster and matched how people naturally arrived together.
+        </p>
+        <video controls preload="metadata" poster="../assets/wedding-app-demo-poster.jpg" width="100%">
+          <source src="../assets/wedding-app-demo.mp4" type="video/mp4" />
+          Your browser doesn't support embedded video. <a href="../assets/wedding-app-demo.mp4">Download the clip</a> instead.
+        </video>
+        <p>
+          AI-coding tools got me most of the way there fast — they gave me speed, working infrastructure, and the ability to build a functioning app without writing everything from scratch. But it wasn't hands-off. I had to manually debug several issues, fix the Google Sheets integration myself when it didn't behave as expected, and rework the UI more than once to match how I actually wanted guests to check in. The tools accelerated the build; the judgment calls — what the interface should assume about how people arrive, what to do when the sync broke, what the fallback needed to cover — were still on me.
+        </p>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container narrow project-body">
+        <h2>Results</h2>
+        <p>
+          On the day, roughly 30% of guests checked themselves in through the app. That alone saved at least 30 minutes compared to the 1.5 hours it would have taken to manually check in and seat everyone at that scale.
+        </p>
+        <ul>
+          <li>~30% of guests self-checked in via the app</li>
+          <li>30 minutes+ saved versus fully manual check-in and seating</li>
+        </ul>
+        <p>
+          The wedding started on time, and the day went smoothly — which, for a system built specifically to not be the thing that goes wrong on the one day it mattered, was the actual goal.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow project-body">
+        <h2>Reflection</h2>
+        <p>
+          This was a useful, low-stakes-in-hindsight but high-stakes-at-the-time test of what AI-assisted building actually looks like without an engineering background. The tools handled the scaffolding — the app framework, the basic logic, getting something running quickly. What they didn't handle was knowing that families check in together, deciding what the fallback needed to protect against, or noticing when the Sheets sync was quietly failing.
+        </p>
+        <p>
+          The lesson I took from it: AI-coding tools are excellent at getting you to a working first draft fast. Getting from a working draft to something that survives contact with 300 real guests arriving at once still comes down to the person building it paying attention to how people actually behave, and being willing to rework what doesn't fit.
+        </p>
+        <p class="back-link"><a href="../index.html#projects">← Back to projects</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2026 Shaun Chua</p>
+    </div>
+  </footer>
+</body>
+</html>
